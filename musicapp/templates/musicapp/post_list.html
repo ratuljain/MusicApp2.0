@@ -1,0 +1,279 @@
+{% extends 'musicapp/base.html' %}{% load likert_fa_stars %}{% load el_pagination_tags %}
+{% block content %}
+
+<section id="content">
+    <section class="vbox">
+        <section class="w-f-md">
+            <section class="hbox stretch bg-black dker">
+                <!-- side content -->
+                <aside class="col-sm-5 no-padder" id="sidebar">
+                    <section class="vbox animated fadeInUp">
+                        <section class="scrollable">
+                            <div class="m-t-n-xxs item pos-rlt">
+                                <div class="top text-right">
+                                    <span class="musicbar animate bg-success bg-empty inline m-r-lg m-t" style="width:25px;height:30px">
+                            <span class="bar1 a3 lter"></span>
+                                    <span class="bar2 a5 lt"></span>
+                                    <span class="bar3 a1 bg"></span>
+                                    <span class="bar4 a4 dk"></span>
+                                    <span class="bar5 a2 dker"></span>
+                                    </span>
+                                </div>
+                                <div class="bottom gd bg-info wrapper-lg">
+
+                                    <span class="h2 font-thin">Add Track&nbsp;</span>
+                                    <a href="{% url 'post_new' %}" class="m-r-sm"><i class="icon-plus"></i></a>
+
+                                </div>
+
+
+                                <img class="img-full" src="http://s3.favim.com/orig/46/black-and-white-classic-disk-music-photography-Favim.com-419665.jpg" alt="...">
+                            </div>
+                            <ul class="list-group list-group-lg no-radius no-border no-bg m-t-n-xxs m-b-none auto">
+
+
+
+
+                                {% paginate tracks %}
+                                {% for track in tracks %}
+
+                                <li class="list-group-item clearfix">
+
+
+                                    <a href="{% url 'post_detail' pk=track.pk %}" class="pull-left thumb-sm m-r">
+                                        {% if track.cover_image_url %}
+                                          <img src="{{ track.cover_image_url }}" alt="...">
+                                        {% else %}
+                                          <img src="/static/images/no_album_art.jpg" alt="/static/images/m0.jpg">
+                                        {% endif %}
+                                    </a>
+                                    <a class="clear" href="{% url 'post_detail' pk=track.pk %}">
+                                        <span class="block text-ellipsis">{{ track.title }}</span>
+                                        <small class="text-muted">{{ track.artist }}</small>
+                                        <br>
+                                        <small class="text-muted">{{ track.album }}</small>
+                                        <br> {{ track.track_rating|fa_stars4 }}
+                                        <a href="{% url 'post_edit' pk=track.pk %}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </a>
+                                </li>
+                                 {% endfor %}
+                                 {% get_pages %}
+                                <ul class="pagination">
+                                    {% for page in pages %}
+                                    <li>
+                                        <a href="{{ page.path }}" rel="page" class="endless_page_link">{{ page.number }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+
+
+                        </section>
+                    </section>
+                </aside>
+                <!-- / side content -->
+                <section class="col-sm-4 no-padder bg">
+                    <section class="vbox">
+                        <section class="scrollable hover">
+                            <ul class="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/m0.jpg" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Little Town</span>
+                                        <small class="text-muted">by Soph Ashe</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a1.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Get lacinia odio sem nec elit</span>
+                                        <small class="text-muted">by Filex</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a2.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Donec sed odio du</span>
+                                        <small class="text-muted">by Dan Doorack</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a3.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Curabitur blandit tempu</span>
+                                        <small class="text-muted">by Foxes</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a4.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Urna mollis ornare vel eu leo</span>
+                                        <small class="text-muted">by Chris Fox</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a5.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Faucibus dolor auctor</span>
+                                        <small class="text-muted">by Lauren Taylor</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a6.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Praesent commodo cursus magn</span>
+                                        <small class="text-muted">by Chris Fox</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a7.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Vestibulum id</span>
+                                        <small class="text-muted">by Milian</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a8.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Blandit tempu</span>
+                                        <small class="text-muted">by Amanda Conlan</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a9.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Vestibulum ullamcorpe quis malesuada augue mco rpe</span>
+                                        <small class="text-muted">by Dan Doorack</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a10.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Natis ipsum ac feugiat</span>
+                                        <small class="text-muted">by Hamburg</small>
+                                    </a>
+                                </li>
+                                <li class="list-group-item clearfix">
+                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                                        <i class="icon-control-play text"></i>
+                                        <i class="icon-control-pause text-active"></i>
+                                    </a>
+                                    <a href="#" class="pull-left thumb-sm m-r">
+                                        <img src="/static/images/a0.png" alt="...">
+                                    </a>
+                                    <a class="clear" href="#">
+                                        <span class="block text-ellipsis">Sec condimentum au</span>
+                                        <small class="text-muted">by Amanda Conlan</small>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+                </section>
+
+            </section>
+        </section>
+
+
+
+        <footer class="footer bg-success dker">
+            <div id="jp_container_N" class="jp-video-270p">
+                <div class="jp-type-playlist">
+                    <div id="jplayer_N" class="jp-jplayer hide" style="width: 480px; height: 270px;"><img id="jp_poster_0" style="width: 480px; height: 270px; display: inline;" src="images/m0.jpg">
+                        <audio id="jp_audio_0" preload="metadata" src="http://flatfull.com/themes/assets/musics/adg3com_bustedchump.mp3"></audio>
+                        <video id="jp_video_0" preload="metadata" style="width: 0px; height: 0px;"></video>
+                    </div>
+                    <div class="jp-gui">
+                        <div class="jp-video-play hide" style="display: block;">
+                            <a class="jp-video-play-icon">play</a>
+                        </div>
+                        <div class="jp-interface">
+                            <div class="jp-controls">
+                                <div>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="hide">
+                                    <a class="jp-full-screen" title="full screen"><i class="fa fa-expand"></i></a>
+                                    <a class="jp-restore-screen" title="restore screen" style="display: none;"><i class="fa fa-compress text-lt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+    </section>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+</section>
+
+{% endblock content %}

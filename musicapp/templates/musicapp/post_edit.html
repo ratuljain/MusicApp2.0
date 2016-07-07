@@ -1,0 +1,53 @@
+{% extends 'musicapp/base.html' %} {% block content %}
+<!-- <h1>New post</h1> -->
+
+
+
+
+<div class="add_track_form" >
+
+  <div class="col-sm-6">
+      <section class="panel panel-default">
+          <header class="panel-heading font-bold">Add Track</header>
+          <div class="panel-body">
+              <form method="POST" class="post-form">{% csrf_token %}
+                  <div class="form-group">
+                      <label>Title</label>
+                       {{ form.title }}
+                  </div>
+                  <div class="form-group">
+                      <label>Artist</label>
+                      {{ form.artist }}
+                  </div>
+
+                  <div class="form-group">
+                      <label>Album</label><br>
+                      {{ form.album }}
+                  </div>
+
+                  <div class="form-group">
+                      <label>Genre</label><br>
+                      {{ form.genre }}
+                      &nbsp; &nbsp;
+                      <a href="{% url 'genre_new' %}" class="m-r-sm"><i class="icon-plus"></i></a>
+                      <span class="h4 font-thin">   Add Genre&nbsp;</span>
+
+                  </div>
+
+                  <div>
+                    <label>Track Rating</label><br>
+                    {{ form.track_rating }}<br><br>
+                  </div>
+
+
+                  <button type="submit" class="btn btn-sm btn-default">Submit</button>
+              </form>
+          </div>
+      </section>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

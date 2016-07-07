@@ -1,0 +1,158 @@
+{% load staticfiles %}
+<html lang="en" class="app js no-touch no-android no-chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad js no-touch no-android no-chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad js no-touch no-android no-chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad js no-touch no-android no-chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad js no-touch no-android no-chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad js no-touch no-android no-chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad">
+
+<head>
+    <meta charset="utf-8">
+    <title>Musik | Web Application</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jPlayer/jplayer.flat.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/animate.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/simple-line-icons.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/font.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/app.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/blog.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+
+    <!--[if lt IE 9]>
+    <script src="/static/js/ie/html5shiv.js"></script>
+    <script src="/static/js/ie/respond.min.js"></script>
+    <script src="/static/js/ie/excanvas.js"></script>
+  <![endif]-->
+    <style></style>
+    <style></style>
+    <style></style>
+    <style></style>
+    <style></style>
+</head>
+
+<body class="" style="">
+    <section class="vbox">
+        <header class="bg-black lter header header-md navbar navbar-fixed-top-xs">
+            <div class="navbar-header aside bg-success">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                    <i class="icon-list"></i>
+                </a>
+                <a href="{% url 'post_list' %}" class="navbar-brand text-lt">
+                    <i class="icon-earphones"></i>
+                    <img src="/static/images/logo.png" alt="." class="hide">
+                    <span class="hidden-nav-xs m-l-sm">Musik</span>
+                </a>
+                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+                    <i class="icon-settings"></i>
+                </a>
+            </div>
+
+            <div class="navbar-right ">
+                <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+
+                    <li class="dropdown">
+
+                        <ul class="dropdown-menu animated fadeInRight">
+                            <li>
+                                <span class="arrow top"></span>
+                                <a href="#">Settings</a>
+                            </li>
+                            <li>
+                                <a href="profile.html">Profile</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="badge bg-danger pull-right">3</span> Notifications
+                                </a>
+                            </li>
+                            <li>
+                                <a href="docs.html">Help</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-black dk aside hidden-print" id="nav">
+                    <section class="vbox">
+                        <section class="w-f-md scrollable">
+                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 379px;">
+                                <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railopacity="0.2" style="overflow: hidden; width: auto; height: 379px;">
+
+
+
+                                    <!-- nav -->
+                                    <nav class="nav-primary hidden-xs">
+                                        <ul class="nav bg clearfix">
+                                            <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                                                Discover
+                                            </li>
+                                            <li>
+                                                <a href="index.html">
+                                                    <i class="icon-disc icon text-success"></i>
+                                                    <span class="font-bold">What's new</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'genre_list' %}">
+                                                    <i class="icon-music-tone-alt icon text-info"></i>
+                                                    <span class="font-bold">Genres</span>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="m-b hidden-nav-xs"></li>
+                                        </ul>
+
+
+                                    </nav>
+                                    <!-- / nav -->
+                                </div>
+                                <div class="slimScrollBar" style="background-color: rgb(0, 0, 0); width: 10px; position: absolute; top: -250px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 0px; height: 283.3155818540434px;"></div>
+                                <div class="slimScrollRail" style="width: 10px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 0px; background-position: initial initial; background-repeat: initial initial;"></div>
+                            </div>
+                        </section>
+
+                        <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                            <div class="bg hidden-xs ">
+                            </div>
+                        </footer>
+                    </section>
+                </aside>
+                <!-- /.aside -->
+
+                {% block content %}
+                {% endblock %}
+
+
+            </section>
+        </section>
+    </section>
+    <script src="/static/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- App -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/static/js/app.plugin.js"></script>
+    <script type="text/javascript" src="/static/js/jPlayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="/static/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="/static/js/jPlayer/demo.js"></script>
+    <script type="text/javascript" src="/static/js/slippry.min.js"></script>
+    <!-- star rating -->
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+
+
+
+
+
+</body>
+
+</html>

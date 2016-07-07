@@ -1,0 +1,29 @@
+{% load el_pagination_tags %}
+{% load likert_fa_stars %}
+{% paginate posts %}
+{% for track in posts %}
+
+
+<li class="list-group-item clearfix">
+
+    <a href="{% url 'post_detail' pk=track.pk %}" class="pull-left thumb-sm m-r">
+        {% if track.cover_image_url %}
+          <img src="{{ track.cover_image_url }}" alt="...">
+        {% else %}
+          <img src="/static/images/no_album_art.jpg" alt="/static/images/m0.jpg">
+        {% endif %}
+    </a>
+    <a class="clear" href="{% url 'post_detail' pk=track.pk %}">
+        <span class="block text-ellipsis">{{ track.title }}</span>
+        <small class="text-muted">{{ track.artist }}</small>
+        <br>
+        <small class="text-muted">{{ track.album }}</small>
+        <br> {{ track.track_rating|fa_stars4 }}
+        <a href="{% url 'post_edit' pk=track.pk %}">
+            <i class="fa fa-edit"></i>
+        </a>
+    </a>
+</li>
+
+{% endfor %}
+{% show_more %}

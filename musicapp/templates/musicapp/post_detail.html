@@ -1,0 +1,133 @@
+{% load likert_fa_stars %}
+<html lang="en-US" class=" js no-touch csstransforms csstransforms3d csstransitions js_active vc_desktop vc_transform vc_transform js no-touch csstransforms csstransforms3d csstransitions js_active vc_desktop vc_transform vc_transform ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
+    <title>Helvetica Wes Anderson — Lush Rock</title>
+</head>
+
+<body class="single single-album postid-125 layout-wide fixed_header wpb-js-composer js-comp-ver-4.8.1 vc_responsive" onload="jQuery('header').animate({'opacity': 1})">
+    <link rel="stylesheet" id="rs-plugin-settings-css" href="http://lush.irontemplates.com/rock/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.0.6" type="text/css" media="all">
+    <style id="rs-plugin-settings-inline-css" type="text/css">
+        #rs-demo-id {}
+    </style>
+    <!-- <link rel="stylesheet" id="font-josefin-css" href="http://fonts.googleapis.com/css?family=Josefin+Sans%3A400%2C600%2C700&amp;ver=4.3.5" type="text/css" media="all"> -->
+    <link rel="stylesheet" id="font-opensans-css" href="http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C400%2C600%2C600italic%2C700&amp;ver=4.3.5" type="text/css" media="all">
+    <link rel="stylesheet" id="font-awesome-css" href="http://lush.irontemplates.com/rock/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=4.8.1" type="text/css" media="screen">
+    <link rel="stylesheet" id="iron-master-css" href="http://lush.irontemplates.com/rock/wp-content/themes/lush/style.css?t=1455032086&amp;ver=4.3.5" type="text/css" media="all">
+    <link rel="stylesheet" id="custom-styles-css" href="http://lush.irontemplates.com/rock/?load=custom-style.css&amp;post_id=125&amp;ver=4.3.5" type="text/css" media="all">
+    <!-- <script type="text/javascript" src="http://lush.irontemplates.com/rock/wp-includes/js/jquery/jquery.js?ver=1.11.3"></script> -->
+    <!-- <script type="text/javascript" src="http://lush.irontemplates.com/rock/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+    <script type="text/javascript" src="http://lush.irontemplates.com/rock/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.0.6"></script>
+    <script type="text/javascript" src="http://lush.irontemplates.com/rock/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.0.6"></script>
+    <script type="text/javascript" src="http://lush.irontemplates.com/rock/wp-content/themes/lush/js/gambit-smoothscroll.js?t=1449092878&amp;ver=1"></script> -->
+
+    <div id="pusher" class="righttype" style="height: 747px;">
+
+        <div id="wrapper">
+            <div class="container">
+                <div class="boxed"> <span class="heading-t"></span>
+                      <a href="{% url 'post_list' %}"><h1>Discographies</h1> <span class="heading-b"></span></a>
+                    <div id="post-125" class="info-section post-125 album type-album status-publish has-post-thumbnail hentry">
+                        <h2>{{track.title}}</h2>
+                        <div class="aside">
+                          {% if track.cover_image_url %}
+                              <div class="image"><img width="300" height="300" src="{{track.cover_image_url}}" class="attachment-330x330 wp-post-image" alt="album_05_robin_lambrecht"></div>
+                          {% else %}
+                              <div class="image"><img width="300" height="300" src="/static/images/no_album_art.jpg" class="attachment-330x330 wp-post-image" alt="album_05_robin_lambrecht"></div>
+                              <!-- <img src="https://unsplash.it/300/300/?random" alt="/static/images/m0.jpg"> -->
+                          {% endif %}
+                          <div class="buttons-block">
+                                <div class="release-date">Release Date: <span>February 4, 2014</span></div>
+                                <div class="available-now">Available now on:</div>
+                                <ul class="store-list">
+                                    <li><a class="button" href="http://www.bandcamp.com/someIDhereHAHAH">Bandcamp</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description-column">
+                            <div class="iron_widget_radio playlist_enabled">
+                                <div class="panel__body player-holder" id="arbitrary-instance-577109c44e71b">
+                                    <div class="info-box">
+                                        <div class="text player-title-box"><span class="track-name">{{track.artist}}</span></div>
+                                        <div class="text player-title-box"><span class="track-name">{{track.album}}</span></div>
+                                        <div class="text player-title-box"><span class="track-name">{{track.track_rating|fa_stars4}}</span></div>
+                                        <div id="audio-holder">
+                                            <section class="content-box">
+                                                <div class="entry">
+                                                    <div class="vc_row wpb_row vc_row-fluid in_container">
+                                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                            <div class="wpb_wrapper">
+                                                                <div class="wpb_text_column wpb_content_element ">
+                                                                    <div class="wpb_wrapper">
+                                                                        <h4>Similar Songs</h4> </div>
+                                                                </div>
+                                                                <div class="wpb_text_column wpb_content_element ">
+                                                                    <div class="wpb_wrapper"> </div>
+                                                                </div>
+                                                                <div class="wpb_accordion wpb_content_element not-column-inherit" data-collapsible="yes" data-vc-disable-keydown="false" data-active-tab="false">
+                                                                    <div class="wpb_wrapper wpb_accordion_wrapper ui-accordion ui-widget ui-helper-reset" role="tablist">
+                                                                        <div class="wpb_accordion_section group">
+                                                                            <h3 class="wpb_accordion_header ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all ui-state-hover" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false"
+                                                                                aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span></h3>
+                                                                            <div class="wpb_accordion_content ui-accordion-content vc_clearfix ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel"
+                                                                                aria-hidden="true" style="display: none;"> </div>
+                                                                        </div>
+                                                                        <div class="wpb_accordion_section group">
+                                                                            <h3 class="wpb_accordion_header ui-accordion-header ui-state-default ui-corner-all ui-accordion-icons ui-state-hover" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false"
+                                                                                aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span></h3>
+                                                                            <div class="wpb_accordion_content ui-accordion-content vc_clearfix ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel"
+                                                                                aria-hidden="true" style="display: none;"> </div>
+                                                                        </div>
+                                                                        <div class="wpb_accordion_section group">
+                                                                            <h3 class="wpb_accordion_header ui-accordion-header ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active" role="tab" id="ui-id-5" aria-controls="ui-id-6"
+                                                                                aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span></h3> </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <div class="jp-audio player-box jp-state-looped" id="jplayerBox-custom-7310">
+                                                <div class="jp-type-playlist">
+                                                    <div class="jp-playlist ">
+                                                        <ul class="tracks-list" style="display: block;">
+                                                            <li>
+                                                                <div>
+                                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0"> <strong class="title">Helvetica Wes Anderson</strong> <span class="track-name">Heavy loud</span> </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div>
+                                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0"> <strong class="title">Helvetica Wes Anderson</strong> <span class="track-name">Heavy loud</span> </a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div>
+                                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0"> <strong class="title">Helvetica Wes Anderson</strong> <span class="track-name">Heavy loud</span> </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{% extends 'musicapp/base.html' %} {% block content %}
+<!-- <h1>New post</h1> -->
+<form method="POST" class="post-form">{% csrf_token %}
+
+
+
+<div class="add_track_form" >
+
+  <div class="col-sm-6">
+      <section class="panel panel-default">
+          <header class="panel-heading font-bold">Add Genre</header>
+          <div class="panel-body">
+
+                  <div class="form-group">
+
+                      <label>Title</label>
+                       {{ form.name }}
+                  </div>
+
+                  {% if 'track/new/' in request.META.HTTP_REFERER %}
+                    <input class="form-control" type="hidden" value = 0 id="flag" maxlength="50" name="flag" type="text">
+                  {% else %}
+                    <input class="form-control" type="hidden" value = 1 id="flag" maxlength="50" name="flag" type="text">
+                  {% endif %}
+                  <button type="submit" class="btn btn-sm btn-default">Submit</button>
+
+          </div>
+      </section>
+  </div>
+
+</div>
+
+
+</form>
+
+{% endblock %}
